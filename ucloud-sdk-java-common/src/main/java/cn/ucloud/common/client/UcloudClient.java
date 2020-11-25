@@ -2,6 +2,7 @@ package cn.ucloud.common.client;
 
 
 import cn.ucloud.common.handler.UcloudHandler;
+import cn.ucloud.common.model.GetGroupListResult;
 import cn.ucloud.common.model.GetProjectListResult;
 import cn.ucloud.common.model.GetRegionResult;
 import cn.ucloud.common.pojo.BaseRequestParam;
@@ -39,6 +40,15 @@ public interface UcloudClient {
      * @throws Exception 出错抛出异常
      */
     GetProjectListResult getProjectList() throws Exception;
+
+
+    /**
+     * 根据项目获取分组
+     * @param projectId
+     * @return
+     * @throws Exception
+     */
+    GetGroupListResult getGroupList(String projectId)throws Exception;
 
 
     /**

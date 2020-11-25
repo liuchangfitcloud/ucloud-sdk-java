@@ -3,10 +3,7 @@ package cn.ucloud.common.client;
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.http.UcloudHttp;
 import cn.ucloud.common.http.UcloudHttpImpl;
-import cn.ucloud.common.model.GetProjectListParam;
-import cn.ucloud.common.model.GetProjectListResult;
-import cn.ucloud.common.model.GetRegionParam;
-import cn.ucloud.common.model.GetRegionResult;
+import cn.ucloud.common.model.*;
 import cn.ucloud.common.pojo.BaseRequestParam;
 import cn.ucloud.common.pojo.BaseResponseResult;
 import cn.ucloud.common.pojo.UcloudConfig;
@@ -43,6 +40,12 @@ public class DefaultUcloudClient implements UcloudClient {
     public GetProjectListResult getProjectList() throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetProjectListResult.class);
         return (GetProjectListResult) http.doPost(new GetProjectListParam(), config, null);
+    }
+
+    @Override
+    public GetGroupListResult getGroupList(String projectId) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(GetGroupListResult.class);
+        return (GetGroupListResult) http.doPost(new GetGroupListParam(projectId),config,null);
     }
 
     @Override

@@ -366,4 +366,91 @@ public interface VPCClient extends UcloudClient {
      * @param asyncFlag 异步标记，默认异步true
      */
     void updateRouteTableAttribute(UpdateRouteTableAttributeParam param, UcloudHandler<UpdateRouteTableAttributeResult> handler, Boolean... asyncFlag);
+
+
+    /**
+     * 修改vpc名称
+     * @param param
+     * @return
+     * @throws Exception
+     */
+    ModifyVPCNameResult modifyVpcName(ModifyVPCNameParam param)throws Exception;
+
+
+    /**
+     * 查询ACL的信息
+     * @param param
+     * @return
+     * @throws Exception
+     */
+    DescribeACLResult describeNetworkAcl(DescribeACLParam param)throws Exception;
+
+    /**
+     * 更新ACL
+     * @param param
+     * @return
+     * @throws Exception
+     */
+    UpdateACLResult updateNetworkAcl(UpdateACLParam param)throws Exception;
+
+    /**
+     * 删除ACL
+     * @param param
+     * @return
+     * @throws Exception
+     */
+    DeleteACLResult deleteNetworkAcl(DeleteACLParam param)throws Exception;
+
+    /**
+     * 创建ACL
+     * @param param
+     * @return
+     * @throws Exception
+     */
+    CreateACLResult createNetworkAcl(CreateACLParam param)throws Exception;
+
+    /**
+     * 获取ACL绑定的子网信息
+     * @param param
+     * @return
+     * @throws Exception
+     */
+    DescribeNetworkAclAssociationResult describeNetworkAclAssociation(DescribeNetworkAclAssociationParam param)throws Exception;
+
+
+    /**
+     * 创建ACL子网绑定
+     * @param param
+     * @return
+     * @throws Exception
+     */
+    CreateNetworkAclAssociationResult createNetworkAclAssociation(CreateNetworkAclAssociationParam param)throws Exception;
+
+
+    /**
+     * 解绑ACL子网
+     * @param param
+     * @return
+     * @throws Exception
+     */
+    DeleteNetworkAclAssociationResult deleteNetworkAclAssociation(DeleteNetworkAclAssociationParam param)throws Exception;
+
+    /**
+     * 获取ACL规则信息
+     * @param param
+     * @return
+     * @throws Exception
+     */
+    DescribeNetworkAclEntryResult describeNetworkAclEntry(DescribeNetworkAclEntryParam param)throws Exception;
+
+
+    /**
+     * 创建ACL规则信息
+     * @param param
+     * @return
+     * @throws Exception
+     */
+    CreateNetworkAclEntryResult createNetworkAclEntry(CreateNetworkAclEntryParam param)throws Exception;
+
+
 }

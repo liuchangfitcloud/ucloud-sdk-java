@@ -1,5 +1,6 @@
 package cn.ucloud.vpc.client;
 
+import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.client.DefaultUcloudClient;
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.http.UcloudHttp;
@@ -305,5 +306,65 @@ public class DefaultVPCClient extends DefaultUcloudClient implements VPCClient {
             http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
+    }
+
+    @Override
+    public ModifyVPCNameResult modifyVpcName(ModifyVPCNameParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(ModifyVPCNameResult.class);
+        return (ModifyVPCNameResult) http.doPost(param, config, null);
+    }
+
+    @Override
+    public DescribeACLResult describeNetworkAcl(DescribeACLParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DescribeACLResult.class);
+        return (DescribeACLResult) http.doPost(param, config, null);
+    }
+
+    @Override
+    public UpdateACLResult updateNetworkAcl(UpdateACLParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(UpdateACLResult.class);
+        return (UpdateACLResult) http.doPost(param, config, null);
+    }
+
+    @Override
+    public DeleteACLResult deleteNetworkAcl(DeleteACLParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DeleteACLResult.class);
+        return (DeleteACLResult) http.doPost(param, config, null);
+    }
+
+    @Override
+    public CreateACLResult createNetworkAcl(CreateACLParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(CreateACLResult.class);
+        return (CreateACLResult) http.doPost(param, config, null);
+    }
+
+    @Override
+    public DescribeNetworkAclAssociationResult describeNetworkAclAssociation(DescribeNetworkAclAssociationParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DescribeNetworkAclAssociationResult.class);
+        return (DescribeNetworkAclAssociationResult) http.doPost(param, config, null);
+    }
+
+    @Override
+    public CreateNetworkAclAssociationResult createNetworkAclAssociation(CreateNetworkAclAssociationParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(CreateNetworkAclAssociationResult.class);
+        return (CreateNetworkAclAssociationResult) http.doPost(param, config, null);
+    }
+
+    @Override
+    public DeleteNetworkAclAssociationResult deleteNetworkAclAssociation(DeleteNetworkAclAssociationParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DeleteNetworkAclAssociationResult.class);
+        return (DeleteNetworkAclAssociationResult) http.doPost(param, config, null);
+    }
+
+    @Override
+    public DescribeNetworkAclEntryResult describeNetworkAclEntry(DescribeNetworkAclEntryParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DescribeNetworkAclEntryResult.class);
+        return (DescribeNetworkAclEntryResult) http.doPost(param, config, null);
+    }
+
+    @Override
+    public CreateNetworkAclEntryResult createNetworkAclEntry(CreateNetworkAclEntryParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(CreateNetworkAclEntryResult.class);
+        return (CreateNetworkAclEntryResult) http.doPost(param, config, null);
     }
 }
