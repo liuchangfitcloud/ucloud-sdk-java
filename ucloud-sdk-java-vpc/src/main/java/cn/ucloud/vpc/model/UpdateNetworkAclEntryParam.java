@@ -6,12 +6,12 @@ import cn.ucloud.common.pojo.BaseRequestParam;
 import javax.validation.constraints.NotEmpty;
 
 /**
- * @description: 创建ACL规则参数类
+ * @description: 编辑ACL规则参数类
  * @author: codezhang
  * @date: 2018-09-21 11:24
  **/
 
-public class CreateNetworkAclEntryParam extends BaseRequestParam {
+public class UpdateNetworkAclEntryParam extends BaseRequestParam {
 
     /**
      * require 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -76,11 +76,17 @@ public class CreateNetworkAclEntryParam extends BaseRequestParam {
     private String apiVersion;
 
 
-    public CreateNetworkAclEntryParam(@NotEmpty(message = "region can not be empty") String region,
-                                      @NotEmpty(message = "aclId can not be empty") String aclId) {
-        super("CreateNetworkAclEntry");
+    @UcloudParam("EntryId")
+    private String entryId;
+
+
+    public UpdateNetworkAclEntryParam(@NotEmpty(message = "region can not be empty") String region,
+                                      @NotEmpty(message = "aclId can not be empty") String aclId,
+                                      @NotEmpty(message = "entryId can not be empty") String entryId) {
+        super("UpdateNetworkAclEntry");
         this.region = region;
         this.aclId = aclId;
+        this.entryId = entryId;
         this.apiVersion = "3";
     }
 

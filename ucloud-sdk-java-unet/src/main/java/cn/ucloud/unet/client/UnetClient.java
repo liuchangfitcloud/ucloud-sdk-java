@@ -677,5 +677,13 @@ public interface UnetClient extends UcloudClient {
     void createFirewall(CreateFirewallParam param, UcloudHandler<CreateFirewallResult> handler,
                         Boolean... asyncFlag);
 
+    /**
+     * 获取可以绑定的主机列表
+     * @param param
+     * @return
+     * @throws Exception
+     */
+    DescribeUHostLiteResult describeUHostLite(DescribeUHostLiteParam param)throws Exception;
+
 
 }

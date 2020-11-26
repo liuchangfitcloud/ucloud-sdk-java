@@ -21,6 +21,13 @@ public class DescribeULBResult extends BaseResponseResult {
         @SerializedName("ULBId")
         private String ulbId;
 
+        @SerializedName("ListenType")
+        private String listenType;
+
+        @SerializedName("EnableLog")
+        private String enableLog;
+
+
         /**
          * 负载均衡的资源名称（资源系统中），缺省值“ULB”
          */
@@ -50,6 +57,12 @@ public class DescribeULBResult extends BaseResponseResult {
          */
         @SerializedName("Bandwidth")
         private Integer bandwidth;
+
+        /**
+         * 版本
+         */
+        @SerializedName("IPVersion")
+        private String ipVersion;
 
         /**
          * ULB的创建时间，格式为Unix Timestamp
@@ -90,6 +103,9 @@ public class DescribeULBResult extends BaseResponseResult {
         @SerializedName("SubnetId")
         private String subnetId;
 
+        @SerializedName("VServerCount")
+        private Integer vServerCount;
+
         /**
          * ULB 所属的业务组ID
          */
@@ -98,6 +114,49 @@ public class DescribeULBResult extends BaseResponseResult {
 
         @SerializedName("PrivateIP")
         private String privateIp;
+
+        @SerializedName("FirewallSet")
+        private List<UFirewall> firewalls;
+
+        public List<UFirewall> getFirewalls() {
+            return firewalls;
+        }
+
+        public void setFirewalls(List<UFirewall> firewalls) {
+            this.firewalls = firewalls;
+        }
+
+        public String getListenType() {
+            return listenType;
+        }
+
+        public void setListenType(String listenType) {
+            this.listenType = listenType;
+        }
+
+        public String getEnableLog() {
+            return enableLog;
+        }
+
+        public void setEnableLog(String enableLog) {
+            this.enableLog = enableLog;
+        }
+
+        public String getIpVersion() {
+            return ipVersion;
+        }
+
+        public void setIpVersion(String ipVersion) {
+            this.ipVersion = ipVersion;
+        }
+
+        public Integer getvServerCount() {
+            return vServerCount;
+        }
+
+        public void setvServerCount(Integer vServerCount) {
+            this.vServerCount = vServerCount;
+        }
 
         public List<ULBVServer> getUlbVServers() {
             return ulbVServers;
@@ -241,6 +300,28 @@ public class DescribeULBResult extends BaseResponseResult {
         @SerializedName("EIPId")
         private String eipId;
 
+        @SerializedName("Bandwidth")
+        private Integer bandwidth;
+
+        @SerializedName("BandwidthType")
+        private Integer BandwidthType;
+
+        public Integer getBandwidthType() {
+            return BandwidthType;
+        }
+
+        public void setBandwidthType(Integer bandwidthType) {
+            BandwidthType = bandwidthType;
+        }
+
+        public Integer getBandwidth() {
+            return bandwidth;
+        }
+
+        public void setBandwidth(Integer bandwidth) {
+            this.bandwidth = bandwidth;
+        }
+
         public String getOperatorName() {
             return operatorName;
         }
@@ -265,6 +346,30 @@ public class DescribeULBResult extends BaseResponseResult {
             this.eipId = eipId;
         }
 
+    }
+
+    public static class UFirewall{
+        @SerializedName("FirewallId")
+        private String firewallId;
+
+        @SerializedName("FirewallName")
+        private String firewallName;
+
+        public String getFirewallId() {
+            return firewallId;
+        }
+
+        public void setFirewallId(String firewallId) {
+            this.firewallId = firewallId;
+        }
+
+        public String getFirewallName() {
+            return firewallName;
+        }
+
+        public void setFirewallName(String firewallName) {
+            this.firewallName = firewallName;
+        }
     }
 
 

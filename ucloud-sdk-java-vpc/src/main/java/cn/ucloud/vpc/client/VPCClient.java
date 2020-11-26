@@ -452,5 +452,31 @@ public interface VPCClient extends UcloudClient {
      */
     CreateNetworkAclEntryResult createNetworkAclEntry(CreateNetworkAclEntryParam param)throws Exception;
 
+    /**
+     * 编辑ACL规则信息
+     * @param param
+     * @return
+     * @throws Exception
+     */
+    UpdateNetworkAclEntryResult updateNetworkAclEntry(UpdateNetworkAclEntryParam param) throws Exception;
+
+
+    /**
+     * 删除ACL规则信息
+     * @param param
+     * @return
+     * @throws Exception
+     */
+    DeleteNetworkAclEntryResult deleteNetworkAclEntry(DeleteNetworkAclEntryParam param) throws Exception;
+
+
+    /**
+     * 获取NAT网关信息
+     * @param param
+     * @return
+     * @throws Exception
+     */
+    DescribeNATGWResult describeNatGw(DescribeNATGWParam param) throws Exception;
+
 
 }

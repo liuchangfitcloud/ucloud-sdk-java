@@ -565,4 +565,10 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
         }
     }
 
+    @Override
+    public DescribeUHostLiteResult describeUHostLite(DescribeUHostLiteParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DescribeUHostLiteResult.class);
+        return (DescribeUHostLiteResult) http.doPost(param, config, null);
+    }
+
 }

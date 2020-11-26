@@ -367,4 +367,22 @@ public class DefaultVPCClient extends DefaultUcloudClient implements VPCClient {
         UcloudHttp http = new UcloudHttpImpl(CreateNetworkAclEntryResult.class);
         return (CreateNetworkAclEntryResult) http.doPost(param, config, null);
     }
+
+    @Override
+    public UpdateNetworkAclEntryResult updateNetworkAclEntry(UpdateNetworkAclEntryParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(UpdateNetworkAclEntryResult.class);
+        return (UpdateNetworkAclEntryResult) http.doPost(param, config, null);
+    }
+
+    @Override
+    public DeleteNetworkAclEntryResult deleteNetworkAclEntry(DeleteNetworkAclEntryParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DeleteNetworkAclEntryResult.class);
+        return (DeleteNetworkAclEntryResult) http.doPost(param, config, null);
+    }
+
+    @Override
+    public DescribeNATGWResult describeNatGw(DescribeNATGWParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DescribeNATGWResult.class);
+        return (DescribeNATGWResult) http.doPost(param, config, null);
+    }
 }
