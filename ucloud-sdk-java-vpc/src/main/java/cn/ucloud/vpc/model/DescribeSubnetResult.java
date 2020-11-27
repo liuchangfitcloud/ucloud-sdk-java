@@ -22,6 +22,9 @@ public class DescribeSubnetResult extends BaseResponseResult {
         @SerializedName("CreateTime")
         private Integer createTime;
 
+        @SerializedName("AvailableIPs")
+        private Integer availableIPs;
+
         /**
          * 网关
          */
@@ -115,6 +118,14 @@ public class DescribeSubnetResult extends BaseResponseResult {
 
         @SerializedName("IPv6Network")
         private String ipv6Network;
+
+        public Integer getAvailableIPs() {
+            return availableIPs;
+        }
+
+        public void setAvailableIPs(Integer availableIPs) {
+            this.availableIPs = availableIPs;
+        }
 
         public String getIpv6Network() {
             return ipv6Network;

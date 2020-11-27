@@ -49,6 +49,13 @@ public class DescribeSubnetParam extends BaseRequestParam {
 
 
     /**
+     * 是否显示可用IP
+     */
+    @UcloudParam("ShowAvailableIPs")
+    private Boolean showAvailableIPs;
+
+
+    /**
      * optional 子网id，适用于一次查询一个子网信息
      */
     @UcloudParam("SubnetId")
@@ -89,6 +96,14 @@ public class DescribeSubnetParam extends BaseRequestParam {
     public DescribeSubnetParam(@NotEmpty(message = "region can not be empty") String region) {
         super("DescribeSubnet");
         this.region = region;
+    }
+
+    public Boolean getShowAvailableIPs() {
+        return showAvailableIPs;
+    }
+
+    public void setShowAvailableIPs(Boolean showAvailableIPs) {
+        this.showAvailableIPs = showAvailableIPs;
     }
 
     public String getRegion() {
