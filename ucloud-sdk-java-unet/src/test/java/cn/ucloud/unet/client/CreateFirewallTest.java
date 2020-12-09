@@ -28,7 +28,7 @@ public class CreateFirewallTest {
                         System.getenv("UCloudPublicKey"))));
 
         List<CreateFirewallParam.Rule> rules = new ArrayList<>();
-        rules.add(new CreateFirewallParam.Rule("TCP", 22, "120.132.8.183", "ACCEPT", "LOW"));
+        rules.add(new CreateFirewallParam.Rule("TCP", "22", "120.132.8.183", "ACCEPT", "LOW"));
         param = new CreateFirewallParam("cn-sh2", rules, "Firewall-test");
     }
 

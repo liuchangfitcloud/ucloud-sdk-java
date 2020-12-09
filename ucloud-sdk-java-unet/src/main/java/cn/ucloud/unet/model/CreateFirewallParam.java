@@ -136,7 +136,7 @@ public class CreateFirewallParam extends BaseRequestParam {
 
     public static class Rule {
         @SuppressWarnings("squid:S1170")
-        private final String ruleFormatWithPort = "%s|%d|%s|%s|%s";
+        private final String ruleFormatWithPort = "%s|%s|%s|%s|%s";
         @SuppressWarnings("squid:S1170")
         private final String ruleFormatWithoutPort = "%s||%s|%s|%s";
         @SuppressWarnings("squid:S1700")
@@ -150,7 +150,7 @@ public class CreateFirewallParam extends BaseRequestParam {
         /**
          * 端口号
          */
-        private Integer port;
+        private String port;
 
         /**
          * IP
@@ -168,7 +168,7 @@ public class CreateFirewallParam extends BaseRequestParam {
         private String priority;
 
         public Rule(String protocol,
-                    Integer port,
+                    String port,
                     String ip,
                     String acceptOrNot,
                     String priority) {
@@ -196,11 +196,11 @@ public class CreateFirewallParam extends BaseRequestParam {
             this.protocol = protocol;
         }
 
-        public Integer getPort() {
+        public String getPort() {
             return port;
         }
 
-        public void setPort(Integer port) {
+        public void setPort(String port) {
             this.port = port;
         }
 
